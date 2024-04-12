@@ -1,36 +1,16 @@
 import { Card } from '@/components/ui/card';
-import {
-  AppStateContextProvider,
-  useAppState,
-  useDispatch,
-} from '@/lib/context';
-import { useGradient } from '@/lib/hooks';
+import { AppStateContextProvider, useAppState } from '@/lib/context';
+import { ButtonRow } from './components/ButtonRow';
 import { ColorRow } from './components/ColorRow';
 import { GradientBox } from './components/GradientBox';
-import { ButtonRow } from './components/ButtonRow';
-import { RotationSlider } from './components/RotationSlider';
 import { GradientTypeToggle } from './components/GradientTypeToggle';
+import { RotationSlider } from './components/RotationSlider';
 
 function App() {
   return (
     <AppStateContextProvider>
-      {/* <Preview /> */}
       <AppContent />
     </AppStateContextProvider>
-  );
-}
-function Preview() {
-  const bgGradient = useGradient();
-
-  const dispatch = useDispatch();
-  return (
-    <button
-      onClick={() => dispatch({ type: 'SET_PREVIEW', payload: false })}
-      style={{
-        background: bgGradient,
-      }}
-      className='absolute w-full h-full top-0 '
-    ></button>
   );
 }
 
