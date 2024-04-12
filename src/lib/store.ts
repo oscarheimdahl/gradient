@@ -76,7 +76,7 @@ export function reducer(state: AppState, action: ActionType) {
     return {
       ...state,
       rotation: Math.floor(Math.random() * 360),
-      colorStops: Array(Math.floor(Math.random() * 5 + 2))
+      colorStops: Array(state.colorStops.length)
         .fill(null)
         .map(newRandomColorStop),
     };

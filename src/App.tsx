@@ -19,7 +19,7 @@ function App() {
 function AppContent() {
   return (
     <div
-      className={`h-full w-full p-8 bg-black grid place-content-center transition-colors`}
+      className={`h-full w-full p-8 dark:bg-black bg-neutral-50 grid place-content-center transition-colors`}
     >
       <ShadowCard />
       <GithubLink />
@@ -41,7 +41,7 @@ function ShadowCard() {
         transition: 'box-shadow 1s',
         boxShadow: `${shadowLeft}, ${shadowRight}`,
       }}
-      className='p-4 flex flex-col w-96'
+      className='relative p-4 flex flex-col w-96 transition-colors'
     >
       <div className='flex flex-col gap-8 p-4 rounded-md'>
         <ColorRow />

@@ -1,12 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { useAppState, useDispatch } from '@/lib/context';
 import { useGradient } from '@/lib/hooks';
-import {
-  Dice5,
-  FlipHorizontal,
-  ClipboardCopy,
-  ClipboardCheck,
-} from 'lucide-react';
+import { Dice5, FlipHorizontal, ClipboardCheck } from 'lucide-react';
 import { useState } from 'react';
 
 export function ButtonRow() {
@@ -56,9 +51,9 @@ function ClipboardButton() {
       onClick={handleClick}
       aria-label='copy to clipboard'
       variant='outline'
-      className='ml-auto'
+      className='ml-auto w-[58px]'
     >
-      {showCopied ? <ClipboardCheck /> : <ClipboardCopy />}
+      {showCopied ? <ClipboardCheck /> : 'CSS'}
     </Button>
   );
 }

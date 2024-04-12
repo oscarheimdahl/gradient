@@ -18,15 +18,15 @@ export function ColorInput({ onChange, onDelete, color }: ColorInputProps) {
       />
       <div
         className={
-          'peer-focus-visible:outline-offset-2  outline outline-2 outline-gray-200 size-8  pointer-events-none rounded-md'
+          'peer-focus-visible:outline-offset-2 outline dark:outline-2 dark:outline-gray-200 outline-1 size-8 pointer-events-none rounded-md'
         }
         style={{ gridArea: '1 / 1', backgroundColor: color }}
       ></div>
       <button
         onClick={onDelete}
-        className='group-hover:scale-100 peer-focus:scale-100 focus:scale-100 transition-transform scale-0 absolute -top-2 -right-2 size-4 grid place-content-center bg-white rounded-full'
+        className='group-hover:scale-100 peer-focus:scale-100 focus:scale-100 transition-transform scale-0 absolute -top-2 -right-2 size-4 grid place-content-center bg-zinc-950 dark:bg-white rounded-full'
       >
-        <X strokeWidth={3} size={12} color='black' />
+        <X strokeWidth={3} size={12} className='text-white dark:text-black' />
       </button>
     </div>
   );
