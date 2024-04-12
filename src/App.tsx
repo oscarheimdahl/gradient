@@ -6,6 +6,8 @@ import { GradientBox } from './components/GradientBox';
 import { GradientTypeToggle } from './components/GradientTypeToggle';
 import { RotationSlider } from './components/RotationSlider';
 
+import { GithubLink } from './components/GithubLink';
+
 function App() {
   return (
     <AppStateContextProvider>
@@ -17,9 +19,10 @@ function App() {
 function AppContent() {
   return (
     <div
-      className={` absolute top-0 h-full w-full p-8 bg-black grid place-content-center transition-colors`}
+      className={`h-full w-full p-8 bg-black grid place-content-center transition-colors`}
     >
       <ShadowCard />
+      <GithubLink />
     </div>
   );
 }

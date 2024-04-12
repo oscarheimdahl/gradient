@@ -43,26 +43,22 @@ export function ColorRow() {
           />
         </Reorder.Item>
       ))}
-      <Reorder.Item
-        className={`${canAdd ? '' : 'opacity-0'} delay-100 transition-opacity`}
-        key={'last'}
-        value={'last'}
-        drag={false}
-      >
+      {canAdd && (
         <Button
-          disabled={!canAdd}
           onClick={() =>
             dispatch({
               type: 'ADD_COLOR_STOP',
               payload: newRandomColorStop(),
             })
           }
-          className={'size-8 ring-2 ring-white p-0 shrink-0 bg-zinc-950'}
+          className={`${
+            canAdd ? '' : 'opacity-0'
+          } size-8 p-0 shrink-0 bg-zinc-950 transition-opacity`}
           variant={'ghost'}
         >
           <Plus />
         </Button>
-      </Reorder.Item>
+      )}
     </Reorder.Group>
   );
 }
