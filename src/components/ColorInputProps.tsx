@@ -17,9 +17,12 @@ export function ColorInput({ onChange, onDelete, color }: ColorInputProps) {
         value={color}
       />
       <div
-        className={
-          'peer-focus-visible:outline-offset-2 outline dark:outline-2 dark:outline-gray-200 outline-1 size-8 pointer-events-none rounded-md'
-        }
+        className={`
+        peer-focus-visible:outline-offset-2
+        outline outline-black-500 outline-1
+        dark:outline-white dark:outline-2
+        rounded-md
+        `}
         style={{ gridArea: '1 / 1', backgroundColor: color }}
       ></div>
       <button

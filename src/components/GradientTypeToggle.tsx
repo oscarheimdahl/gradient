@@ -20,7 +20,6 @@ export function GradientTypeToggle() {
       value={gradientType}
       onValueChange={handleValueChange}
       defaultValue='account'
-      className='w-[400px]'
     >
       <TabsList>
         <TabsTrigger className='flex gap-1' value={GradientType.Linear}>

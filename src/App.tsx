@@ -41,7 +41,7 @@ function ShadowCard() {
         transition: 'box-shadow 1s',
         boxShadow: `${shadowLeft}, ${shadowRight}`,
       }}
-      className='relative p-4 flex flex-col w-96 transition-colors'
+      className='relative py-4 px-1 sm:px-4 flex flex-col transition-colors w-80 sm:w-[26rem]'
     >
       <div className='flex flex-col gap-8 p-4 rounded-md'>
         <ColorRow />

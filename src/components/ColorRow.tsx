@@ -19,7 +19,7 @@ export function ColorRow() {
 
   return (
     <Reorder.Group
-      className='flex items-center gap-3 pl-[0.125rem]'
+      className='flex items-center gap-2 sm:gap-3 pl-[0.125rem]'
       axis='x'
       values={colorStops}
       onReorder={(colorStops) =>
