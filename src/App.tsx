@@ -14,8 +14,8 @@ function App() {
       <div
         className={`h-full w-full p-8 dark:bg-black bg-neutral-50 flex justify-center items-center transition-colors`}
       >
-        <ShadowCard />
         <GithubLink />
+        <ShadowCard />
       </div>
     </AppStateContextProvider>
   );
