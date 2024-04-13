@@ -1,6 +1,9 @@
 export function GithubLink() {
   return (
-    <a href='https://github.com/oscarheimdahl/gradient'>
+    <a
+      className='hidden sm:block'
+      href='https://github.com/oscarheimdahl/gradient'
+    >
       <button
         aria-label='oscarheimdahl github'
         className='group absolute right-0 bottom-0 opacity-30 m-2 size-6'
