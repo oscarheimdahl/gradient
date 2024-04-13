@@ -12,7 +12,7 @@ function App() {
   return (
     <AppStateContextProvider>
       <div
-        className={`h-full w-full p-8 dark:bg-black bg-neutral-50 flex justify-center items-center transition-colors`}
+        className={`h-full w-full dark:bg-black bg-neutral-50 flex justify-center transition-colors`}
       >
         <GithubLink />
         <ShadowCard />
@@ -35,7 +35,7 @@ function ShadowCard() {
         transition: 'box-shadow 1s',
         boxShadow: `${shadowLeft}, ${shadowRight}`,
       }}
-      className='relative my-4 p-1 min-w-72 max-w-96 sm:p-2 pb-4 flex flex-col w-full sm:w-[28rem] sm:max-w-[28rem] transition-colors '
+      className='relative my-4 p-1 min-w-72 h-fit max-w-96 sm:p-2 pb-4 flex flex-col w-full sm:w-[28rem] sm:max-w-[28rem] transition-colors '
     >
       <div className='flex flex-col gap-8 p-4 rounded-md'>
         <ColorRow />
