@@ -11,7 +11,7 @@ export function ColorRow() {
   const colorStops = state.colorStops;
   const dispatch = useDispatch();
 
-  const canAdd = colorStops.length <= 5;
+  const canAdd = colorStops.length <= 4;
 
   const [darkMode, setDarkMode] = useState(
     document.documentElement.classList.contains('dark')
@@ -19,7 +19,7 @@ export function ColorRow() {
 
   return (
     <Reorder.Group
-      className='flex items-center gap-2 sm:gap-3 pl-[0.125rem]'
+      className='flex items-center gap-3  pl-[0.125rem]'
       axis='x'
       values={colorStops}
       onReorder={(colorStops) =>

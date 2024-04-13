@@ -11,19 +11,13 @@ import { GithubLink } from './components/GithubLink';
 function App() {
   return (
     <AppStateContextProvider>
-      <AppContent />
+      <div
+        className={`h-full w-full p-8 dark:bg-black bg-neutral-50 flex justify-center items-center transition-colors`}
+      >
+        <ShadowCard />
+        <GithubLink />
+      </div>
     </AppStateContextProvider>
-  );
-}
-
-function AppContent() {
-  return (
-    <div
-      className={`h-full w-full p-8 dark:bg-black bg-neutral-50 grid place-content-center transition-colors`}
-    >
-      <ShadowCard />
-      <GithubLink />
-    </div>
   );
 }
 
@@ -41,7 +35,7 @@ function ShadowCard() {
         transition: 'box-shadow 1s',
         boxShadow: `${shadowLeft}, ${shadowRight}`,
       }}
-      className='relative py-4 px-1 sm:px-4 flex flex-col transition-colors w-80 sm:w-[26rem]'
+      className='relative my-4 p-1 min-w-72 max-w-96 sm:p-2 pb-4 flex flex-col w-full sm:w-[28rem] sm:max-w-[28rem] transition-colors '
     >
       <div className='flex flex-col gap-8 p-4 rounded-md'>
         <ColorRow />
