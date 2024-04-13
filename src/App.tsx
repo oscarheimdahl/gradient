@@ -35,15 +35,18 @@ function ShadowCard() {
         transition: 'box-shadow 1s',
         boxShadow: `${shadowLeft}, ${shadowRight}`,
       }}
-      className='my-auto relative p-1 min-w-72 h-fit max-w-96 sm:p-2 pb-4 flex flex-col w-full sm:w-[28rem] sm:max-w-[28rem] transition-colors '
+      className={`my-auto relative transition-colors flex flex-col w-full h-fit
+      gap-4 p-4 pb-4 min-w-72 max-w-96
+      sm:gap-8 sm:p-8 sm:pb-12 sm:max-w-[28rem]
+      `}
     >
-      <div className='flex flex-col gap-8 p-4 rounded-md'>
-        <ColorRow />
-        <GradientBox />
-        <ButtonRow />
-        <GradientTypeToggle />
-        <RotationSlider />
-      </div>
+      {/* <div className=' rounded-md'> */}
+      <ColorRow />
+      <GradientBox />
+      <ButtonRow />
+      <GradientTypeToggle />
+      <RotationSlider />
+      {/* </div> */}
     </Card>
   );
 }

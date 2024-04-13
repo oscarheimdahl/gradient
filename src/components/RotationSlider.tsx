@@ -17,7 +17,9 @@ export function RotationSlider() {
     opacity = 'opacity-0';
   }
   return (
-    <div className={`flex flex-col w-full gap-4 transition-opacity ${opacity}`}>
+    <div
+      className={`flex flex-col w-full gap-2 sm:gap-4 transition-opacity ${opacity}`}
+    >
       <div className='flex justify-between items-center'>
         <Label htmlFor='rotation-slider'>Rotation</Label>
         <span className='text-sm'>{rotation}°</span>
