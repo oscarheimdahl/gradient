@@ -68,7 +68,11 @@ export function reducer(state: AppState, action: ActionType) {
       ...state,
       colorStops: state.colorStops.map((colorStop) =>
         colorStop.id === action.payload.id
-          ? { ...colorStop, ...action.payload }
+          ? {
+              ...colorStop,
+              color: action.payload.color,
+              opacity: action.payload.opacity,
+            }
           : colorStop
       ),
     };

@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { ColorStop } from './store';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -56,6 +57,6 @@ function randomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-export function newRandomColorStop() {
+export function newRandomColorStop(): ColorStop {
   return { color: randomColor(), id: crypto.randomUUID(), opacity: 'FF' };
 }
