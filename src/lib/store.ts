@@ -3,6 +3,7 @@ import { newRandomColorStop } from '@/lib/utils';
 export type ColorStop = {
   color: string;
   id: `${string}-${string}-${string}-${string}-${string}`;
+  opacity: string;
 };
 
 export enum GradientType {
@@ -15,6 +16,7 @@ export type AppState = {
   colorStops: ColorStop[];
   gradientType: GradientType;
   preview: boolean;
+  userHasTriedOpacity: boolean;
 };
 
 export const initialState: AppState = {
@@ -22,6 +24,7 @@ export const initialState: AppState = {
   colorStops: [newRandomColorStop(), newRandomColorStop()],
   gradientType: GradientType.Linear,
   preview: false,
+  userHasTriedOpacity: !!localStorage.getItem('userHasTriedOpacity'),
 };
 
 export type ActionType =
@@ -31,9 +34,13 @@ export type ActionType =
   | { type: 'REVERSE_COLOR_STOPS' }
   | { type: 'RANDOMIZE_COLOR_STOPS' }
   | { type: 'DELETE_COLOR_STOP'; payload: string }
-  | { type: 'UPDATE_COLOR_STOP'; payload: { id: string; color: string } }
+  | {
+      type: 'UPDATE_COLOR_STOP';
+      payload: { id: string; color: string; opacity: string };
+    }
   | { type: 'ADD_COLOR_STOP'; payload: ColorStop }
-  | { type: 'SET_PREVIEW'; payload: boolean };
+  | { type: 'SET_PREVIEW'; payload: boolean }
+  | { type: 'SET_USER_HAS_TRIED_OPACITY' };
 
 export function reducer(state: AppState, action: ActionType) {
   if (action.type === 'SET_ROTATION') {
@@ -59,10 +66,10 @@ export function reducer(state: AppState, action: ActionType) {
   if (action.type === 'UPDATE_COLOR_STOP') {
     return {
       ...state,
-      colorStops: state.colorStops.map((otherColorStop) =>
-        otherColorStop.id === action.payload.id
-          ? { ...otherColorStop, color: action.payload.color }
-          : otherColorStop
+      colorStops: state.colorStops.map((colorStop) =>
+        colorStop.id === action.payload.id
+          ? { ...colorStop, ...action.payload }
+          : colorStop
       ),
     };
   }
@@ -81,11 +88,17 @@ export function reducer(state: AppState, action: ActionType) {
         .map(newRandomColorStop),
     };
   }
-
   if (action.type === 'SET_PREVIEW') {
     return {
       ...state,
       preview: action.payload,
+    };
+  }
+  if (action.type === 'SET_USER_HAS_TRIED_OPACITY') {
+    localStorage.setItem('userHasTriedOpacity', 'true');
+    return {
+      ...state,
+      userHasTriedOpacity: true,
     };
   }
 

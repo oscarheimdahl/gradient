@@ -57,5 +57,5 @@ function randomColor() {
 }
 
 export function newRandomColorStop() {
-  return { color: randomColor(), id: crypto.randomUUID() };
+  return { color: randomColor(), id: crypto.randomUUID(), opacity: 'FF' };
 }

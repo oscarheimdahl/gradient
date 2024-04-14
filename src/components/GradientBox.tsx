@@ -9,7 +9,9 @@ const REM = 16;
 export function GradientBox() {
   const dispatch = useDispatch();
   const state = useAppState();
-  const colorStops = state.colorStops.map((colorStop) => colorStop.color);
+  const colorStops = state.colorStops.map(
+    (colorStop) => colorStop.color + colorStop.opacity
+  );
   const preview = state.preview;
   const bgGradient = useGradient();
 
@@ -52,10 +54,7 @@ export function GradientBox() {
       >
         <motion.div
           ref={gradientBoxRef}
-          // transition={{
-          //   type: 'spring',
-          //   mass: 0.6,
-          // }}
+          initial={{ borderRadius: '0.5rem' }}
           animate={{
             scaleX: preview ? fullscreenScaleX() : 1,
             scaleY: preview ? fullscreenScaleY() : 1,

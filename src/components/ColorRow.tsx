@@ -3,7 +3,7 @@ import { useAppState, useDispatch } from '@/lib/context';
 import { newRandomColorStop } from '@/lib/utils';
 import { Reorder } from 'framer-motion';
 import { Plus, Moon, Sun } from 'lucide-react';
-import { ColorInput } from './ColorInputProps';
+import { ColorInput } from './ColorInput';
 import { useState } from 'react';
 
 export function ColorRow() {
@@ -30,18 +30,20 @@ export function ColorRow() {
         <Reorder.Item key={colorStop.id} value={colorStop}>
           <ColorInput
             color={colorStop.color}
+            opacity={colorStop.opacity}
             onDelete={() =>
               dispatch({
                 type: 'DELETE_COLOR_STOP',
                 payload: colorStop.id,
               })
             }
-            onChange={(newColor) =>
+            onChange={(newColor, opacity) =>
               dispatch({
                 type: 'UPDATE_COLOR_STOP',
                 payload: {
                   id: colorStop.id,
                   color: newColor,
+                  opacity: opacity,
                 },
               })
             }
